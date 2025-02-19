@@ -18,6 +18,8 @@ body {
     font-family: 'UnifrakturMaguntia', cursive;
     font-size: 3rem;
     text-shadow: 4px 4px 10px rgba(255, 0, 0, 0.6);
+    position: absolute;
+    right: 40px;
 }
   
   /* Enlaces */
@@ -49,15 +51,26 @@ body {
   }
 
 
-  /* Imagenes */
+  /* Imagen */
   .image-container img {
     width: 20%;
     border-radius: 10px;
     transition: transform 0.3s ease;
     margin: 0;
-
+    position: fixed;
+    left: 30px;
+    top: 40px;
   }
   
   .image-container:hover img {
     transform: scale(1.1);
+  }
+
+  /* Presentacion */
+  .presentacion {
+    position: absolute;
+    margin: 0 auto;
+    width: 800px;
+    left: 400px;
+    top: 200px;
   }
