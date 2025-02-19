@@ -1,8 +1,24 @@
 body {
     padding: 50px;
     background: linear-gradient(to right, #4eb5b9, #e78036c7);
-    transition: background 0.5s ease-in-out;
+
+    display: grid;
+    height: 100vh;
+    text-align: center;
+    /*
+        transition: background 0.5s ease-in-out;
+
+    align-items: center;
+    height: 100vh;
+
+    */
   }
+  /* Titulo */
+  h1 {
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-size: 3rem;
+    text-shadow: 4px 4px 10px rgba(255, 0, 0, 0.6);
+}
   
   /* Enlaces */
   a {
@@ -27,7 +43,21 @@ body {
   a:hover {
     color: #0056b3;
   }
-  
+
   a:hover::after {
     transform: scaleX(1);
+  }
+
+
+  /* Imagenes */
+  .image-container img {
+    width: 20%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    margin: 0;
+
+  }
+  
+  .image-container:hover img {
+    transform: scale(1.1);
   }
