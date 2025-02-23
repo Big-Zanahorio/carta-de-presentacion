@@ -2,11 +2,13 @@
 
 
 * {
+  /* Reseteo de CSS */
     padding: 0;
     margin: 0;
 }
 
 .pagina {
+  /* Esta es la division de la pagina principal */
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -14,16 +16,17 @@
   }
 
 body {
+    /* Aqui se esta modificando el fondo y el tamaño de la pagina*/
     padding: 50px;
     background: linear-gradient(to right, #4eb5b9, #e78036c7);
-
     height: 100vh;
     box-sizing: border-box;
   }
   
-  /* Perfil */
-  /* Imagen */
-  .pagina__perfil {
+  /* ------  Perfil ------------ */
+
+  /* -- Imagen --- */
+  .pagina__perfil {    /* Esta es la seccion con mi foto y mis enlaces */
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -31,28 +34,38 @@ body {
     flex-shrink: 1.5;
   }
 
-  .pagina__perfil__contenedor-imagen {
+  .pagina__perfil__contenedor-imagen {    /* Este es el contenedor de la imagen en la seccion
+                                             Perfil*/
     width: 50%;
     padding: 2%;
   }
-  .pagina__perfil__contenedor-imagen img {
+  .pagina__perfil__contenedor-imagen img { /* Esta es la imagen dentro del contenedor */
     width: 100%;
     border-radius: 30px;
     transition: transform 0.3s ease;
   }
   
-  .pagina__perfil__contenedor-imagen:hover img {
+  .pagina__perfil__contenedor-imagen:hover img { /* Aqui se le aplican cambios a la imagen
+                                                    cuando el mouse esta sobre ella */
     transform: scale(1.1);
   }
 
-  /* Enlaces */
-  .pagina__enlaces {
+  /* ---- Enlaces ---- */
+  .pagina__enlaces { /* Esta es la seccion del perfil donde estan los enlaces */
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
   }
 
-  .pagina__enlaces__link {
+  .pagina__enlaces__subtitulo { /* Este es el subtitulo de los enlaces */
+    font-family: "Kanit", serif;
+    color: #1d3557;
+  }
+
+  .pagina__enlaces__link { /* Este es el estilo aplicado a los botones que seran los enlaces */
     text-decoration: none;
     color: #e7ebef;
     background-color: #1d3557;
@@ -64,10 +77,10 @@ body {
     padding: 8px 6px;
     font-family: "Montserrat", serif;
     font-weight: 600;
-
+    border: 2px solid #e7ebef;
   }
   
-  .pagina__enlaces__link::after {
+  .pagina__enlaces__link::after { /* Esta es la barra que aparece debajo de los enlaces */
     content: "";
     position: absolute;
     left: 10%;
@@ -75,28 +88,32 @@ body {
     width: 80%;
     height: 2px;
     background-color: #0056b3;
-    transform: scaleX(0);
+    transform: scaleX(0); /* Aqui se esta suprimiendo el tamaño de la barra para que no se vea*/
     transition: transform 0.3s ease-in-out;
+  
   }
   
-  .pagina__enlaces__link:hover {
+  .pagina__enlaces__link:hover { /* Estos son los cambios de estilo aplicados a los enlaces
+                                    cuando el mouse esta sobre los enlaces */
     color: #0056b3;
     background-color: #3683d5;
+    border: 2px solid #0056b3;
   }
 
-  .pagina__enlaces__link:hover::after {
-    transform: scaleX(1);
+  .pagina__enlaces__link:hover::after {/* Estos son los cambios de estilo aplicados a la barra
+                                          cuando el mouse esta sobre los enlaces */
+    transform: scaleX(1); /* Aqui se esta regresando la barra a su tamaño original */
   }
 
-  /* Contenido */
-  .pagina__contenido {
+  /* ---------------- Contenido ---------------- */
+  .pagina__contenido { /* Esta es la seccion con el titulo y el texto */
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 40px;
   }
-  /* Titulo */
-  .pagina__contenido__titulo-blog {
+  /* ---- Titulo ---- */
+  .pagina__contenido__titulo-blog { 
     font-family: "Kanit", serif;
     color: #1d3557;
     font-size: 3rem;
