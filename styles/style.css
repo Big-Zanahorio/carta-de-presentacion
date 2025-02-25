@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+  --color-primario: #1d2d44;
+  --color-secundario: #f0ebd8;
+  --color-terciario: #3e5c76;
+  --color-cuaternario: #00a8e8;
+
+  --fuente-principal:  "Kanit", sans serif;
+  --fuente-secundaria:  "Montserrat", sans serif;
+}
 
 * {
   /* Reseteo de CSS */
@@ -7,21 +16,37 @@
     margin: 0;
 }
 
+body {
+  /* Aqui se esta modificando el fondo y el tamaño de la pagina*/
+  background: linear-gradient(to right, var(--color-terciario), var(--color-cuaternario));
+  box-sizing: border-box;
+}
+
+.header {
+  padding: 2% 0% 0% 10%;
+}
+
+.header__menu {
+  display: flex;
+  gap: 40px;
+}
+
+.header__menu__link {
+  font-family: var(--fuente-principal);
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--color-secundario);
+}
+
 .pagina {
   /* Esta es la division de la pagina principal */
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 100%;
+    margin: 50px;
+    padding: 1%;
   }
 
-body {
-    /* Aqui se esta modificando el fondo y el tamaño de la pagina*/
-    padding: 50px;
-    background: linear-gradient(to right, #4eb5b9, #e78036c7);
-    height: 100vh;
-    box-sizing: border-box;
-  }
   
   /* ------  Perfil ------------ */
 
@@ -41,7 +66,7 @@ body {
   }
   .pagina__perfil__contenedor-imagen img { /* Esta es la imagen dentro del contenedor */
     width: 100%;
-    border-radius: 30px;
+    border-radius: 2rem;
     transition: transform 0.3s ease;
   }
   
@@ -51,43 +76,48 @@ body {
   }
 
   /* ---- Enlaces ---- */
+  
+  .pagina__enlaces__subtitulo { /* Este es el subtitulo de los enlaces */
+    font-family: "Kanit", serif;
+    color: var(--color-primario);
+  }
+
   .pagina__enlaces { /* Esta es la seccion del perfil donde estan los enlaces */
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-  }
-
-  .pagina__enlaces__subtitulo { /* Este es el subtitulo de los enlaces */
-    font-family: "Kanit", serif;
-    color: #1d3557;
+    gap: 1rem;
   }
 
   .pagina__enlaces__link { /* Este es el estilo aplicado a los botones que seran los enlaces */
     text-decoration: none;
-    color: #e7ebef;
-    background-color: #1d3557;
+    color: var(--color-secundario);
+    background-color: var(--color-primario);
     transition: color 0.3s ease;
     position: relative;
-    width: 80px;
-    height: 25px;
-    border-radius: 30px;
-    padding: 8px 6px;
-    font-family: "Montserrat", serif;
+    width: 11.25rem;
+    height: 1.5rem;
+    border-radius: 2rem;
+    padding: .5rem .3rem;
+    font-family: var(--fuente-secundaria);
     font-weight: 600;
-    border: 2px solid #e7ebef;
+    border: .12rem solid var(--color-secundario);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
   }
   
   .pagina__enlaces__link::after { /* Esta es la barra que aparece debajo de los enlaces */
     content: "";
     position: absolute;
     left: 10%;
-    bottom: 13px;
+    bottom: .1rem;
     width: 80%;
-    height: 2px;
-    background-color: #0056b3;
+    height: .1rem;
+    background-color: var(--color-primario);
     transform: scaleX(0); /* Aqui se esta suprimiendo el tamaño de la barra para que no se vea*/
     transition: transform 0.3s ease-in-out;
   
@@ -95,9 +125,9 @@ body {
   
   .pagina__enlaces__link:hover { /* Estos son los cambios de estilo aplicados a los enlaces
                                     cuando el mouse esta sobre los enlaces */
-    color: #0056b3;
-    background-color: #3683d5;
-    border: 2px solid #0056b3;
+    color: var(--color-primario);
+    background-color: var(--color-cuaternario);
+    border: .1rem solid var(--color-primario);
   }
 
   .pagina__enlaces__link:hover::after {/* Estos son los cambios de estilo aplicados a la barra
@@ -105,28 +135,59 @@ body {
     transform: scaleX(1); /* Aqui se esta regresando la barra a su tamaño original */
   }
 
+
+
+
+  
   /* ---------------- Contenido ---------------- */
   .pagina__contenido { /* Esta es la seccion con el titulo y el texto */
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 40px;
+    gap: 4rem;
+    text-align: center;
   }
   /* ---- Titulo ---- */
-  .pagina__contenido__titulo-blog { 
-    font-family: "Kanit", serif;
-    color: #1d3557;
+  .pagina__contenido__titulo { 
+    font-family: var(--fuente-principal);
+    color: var(--color-primario);
     font-size: 3rem;
-    text-shadow: 4px 4px 10px rgba(255, 0, 0, 0.6);
+    text-shadow: .2rem .2rem .7rem var(--color-secundario);
   }
   .pagina__contenido__presentacion {
-    font-family: "Montserrat", serif;
+    font-family: var(--fuente-secundaria);
+    font-weight: 600;
+    color: var(--color-secundario);
     margin: 0 auto;
     width: 80%;
   }
 
-  .pagina__contenido__presentacion__texto-destacado {
-    color:#1c18d1;
+
+  /* ---- Pie de pagina ---- */
+  .footer {
+    text-align: center;
+    color: var(--color-secundario);
+    background-color: var(--color-primario);
+    padding: 1.5rem;
+    font-family: var(--fuente-secundaria);
+    font-size: 1rem;
+    font-weight: 600;
+    bottom: 0;
   }
 
-  
+  @media (max-width: 800px) {
+
+    .header {
+      padding: 5%;
+    }
+
+    .header__menu {
+      justify-content: center;
+    }
+
+    .pagina {
+      flex-direction: column-reverse;
+      margin: 2%;
+      gap: 3rem;
+    }
+  }
